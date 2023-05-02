@@ -1,0 +1,91 @@
+<my-sidebar></my-sidebar>
+
+<div class="main-content"  style="background-color: #f1f0f0;" >
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" >
+		<form  [formGroup]="form">
+			<div class="text-center"> 
+				 <h2>Games</h2> 
+			</div> 
+		   <br>
+			<div class="row bootstrap snippets bootdeys"> 
+				
+			 <div class="col-md-3" > 
+			   
+			   <input type="text" class="form-control"  formControlName="shortcode" name="s" id="search-input" placeholder="ShortCode"> 
+			 </div> 
+			
+			
+			 
+			
+		<div class="col-md-3" > 
+			<button type="submit"  name="submit" class="btn btn-primary" style="width: 100px;" (click)="onclick()" >
+				  Search 
+			 </button>
+	</div>
+		</div>
+	</form>
+  <br>
+		<div >
+			<div class="row">
+			  <div class="col-md-12">
+				<div class="user-dashboard-info-box table-responsive mb-0 bg-white p-4 shadow-sm">
+				  <table class="table manage-candidates-top mb-0">
+	<thead class="thead">
+	  <tr>
+		<th>Game Name</th>
+    <th>Number of Players</th>
+		<th> ShortCode</th>
+
+	  </tr>
+	</thead>
+
+	<tbody >
+
+
+		   <tr class="candidates-list" *ngFor="let group of services"> 
+			<td class="title">
+				
+				<div class="candidate-list-details">
+				  <div class="candidate-list-info">
+					<div class="candidate-list-title">
+              {{group.libelle}}
+					</div>
+					
+				  </div>
+				</div>
+			  </td>
+        <td>
+          <div class="candidate-list-option">
+          {{group.number_gamers}}
+          </div>
+      </td>
+	  <td>
+		<div class="candidate-list-option">
+		{{group.shortcode}}
+		</div>
+	</td>
+
+		  </tr>
+		 
+		  
+	</tbody>
+  </table> 
+  <footer>
+  <div class="text-center mt-3 mt-sm-3">
+	<ul class="pagination justify-content-center mb-0">
+	  <li class="page-item disabled"> <span class="page-link">Prev</span> </li>
+	  <li class="page-item active" aria-current="page"><span class="page-link">1 </span> <span class="sr-only">(current)</span></li>
+	  <li class="page-item"><a class="page-link" href="#">2</a></li>
+	  <li class="page-item"><a class="page-link" href="#">3</a></li>
+	  <li class="page-item"><a class="page-link" href="#">...</a></li>
+	  <li class="page-item"><a class="page-link" href="#">25</a></li>
+	  <li class="page-item"> <a class="page-link" href="#">Next</a> </li>
+	</ul>
+  </div></footer>
+				</div>
+			</div>
+		</div>
+</div>
+	</main>
+
+</div>
